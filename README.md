@@ -1,4 +1,4 @@
-# Stripe-Subcription---JWT-Authentication-with-MERN
+# Stripe-OneTimePayment-Subcription-Integration-with-JWT-ExpressJs-Node-MongoDb
 
 
 # Landing-Page
