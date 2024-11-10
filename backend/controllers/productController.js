@@ -98,3 +98,39 @@ exports.createOneTimeCheckoutSession = async (req, res) => {
         });
     }
 };
+
+exports.getActiveSubscription = async (req, res) => {
+    try {
+        const user = req.user;
+        
+        if (!user.stripeCustomerId) {
+            return res.json({ success: true, activeSubscription: null });
+        }
+
+        const subscription = await stripe.subscriptions.list({
+            customer: user.stripeCustomerId,
+            status: 'active',
+            expand: ['data.plan.product']
+        });
+
+        if (subscription.data.length > 0) {
+            res.json({
+                success: true,
+                activeSubscription: {
+                    productId: subscription.data[0].plan.product.id,
+                    status: subscription.data[0].status,
+                    planName: subscription.data[0].plan.product.name,
+                    currentPeriodEnd: subscription.data[0].current_period_end
+                }
+            });
+        } else {
+            res.json({ success: true, activeSubscription: null });
+        }
+    } catch (error) {
+        console.error('Error fetching active subscription:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+};

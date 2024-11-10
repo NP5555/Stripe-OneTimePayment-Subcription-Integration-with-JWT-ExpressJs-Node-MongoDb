@@ -1,6 +1,7 @@
 // Dashboard.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 const Subcription = () => {
   const navigate = useNavigate();
@@ -183,6 +184,7 @@ const Subcription = () => {
       </div>
     </div>
   </section>
+  <Footer />
 </div>
   );
 };

@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cors = require('cors');
 const productRoutes = require('./routes/productRoutes');
-
 dotenv.config();
+const customerRoutes = require('./routes/customerRoutes');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const corsOptions = {
@@ -24,7 +24,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   });
 
 app.use('/auth', authRoutes);
-app.use('/stripe/products', productRoutes);
+app.use('/admin', customerRoutes);
+app.use('/stripe', productRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
