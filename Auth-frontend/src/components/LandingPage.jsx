@@ -49,11 +49,11 @@ const LandingPage = () => {
         <main className="relative z-10 flex-1 container mx-auto px-6 py-12 grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-5xl font-bold text-gray-800 leading-tight">
-              Universal Stripe Checkout <span className="text-green-700">For AlL Over the World</span>
+            Stripe Checkout <span className="text-green-700">For ALL Businesses</span>
             </h2>
             <p className="text-gray-600 text-xl leading-relaxed">
               One-Click checkout solution for your business with a strong focus on
-              security and unifying major payment methods.
+              security and unifying major payment methods - Subcriptions and One-Time Payments.
             </p>
             <a 
               href="/register"
