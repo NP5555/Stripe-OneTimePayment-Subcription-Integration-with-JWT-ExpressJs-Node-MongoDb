@@ -18,5 +18,8 @@
 # Payment Session Success
 <img src="./Auth-frontend/src/assets/previews/payment success.png">
 
+# Admin Access Route- Get all customers with active plans
+<img src="./Auth-frontend/src/assets/previews/customers.png">
+
 # Payment Session Cencel
 <img src="./Auth-frontend/src/assets/previews/payment cencel.png">
