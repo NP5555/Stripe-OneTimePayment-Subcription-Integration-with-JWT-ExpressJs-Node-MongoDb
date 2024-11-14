@@ -75,8 +75,8 @@ const Subcription = () => {
   const handlePurchase = async (priceId, isSubscription) => {
     try {
       const endpoint = isSubscription 
-        ? "http://localhost:3000/stripe/products/create-checkout-session"
-        : "http://localhost:3000/stripe/products/create-one-time-checkout";
+        ? "http://localhost:3000/stripe/create-checkout-session"
+        : "http://localhost:3000/stripe/create-one-time-checkout";
 
       const response = await fetch(endpoint, {
         method: "POST",

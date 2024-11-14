@@ -84,6 +84,7 @@ exports.createOneTimeCheckoutSession = async (req, res) => {
             }],
             success_url: `${process.env.FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${process.env.FRONTEND_URL}/cancel`,
+            expires_at: Math.floor(Date.now() / 1000) + (60 * 30) // Expires in 30 minutes
         });
 
         return res.json({
